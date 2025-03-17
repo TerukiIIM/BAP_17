@@ -125,11 +125,6 @@ function App() {
                             </div>
                         </div>
                         <div className="w-full flex flex-col items-center">
-                            <img
-                                className="w-[100%] absolute z-10 mt-96"
-                                src="/section 5.png"
-                                alt=""
-                            />
                             <svg
                                 className="w-[100%] relative "
                                 width="100"
