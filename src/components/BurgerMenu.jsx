@@ -9,7 +9,6 @@ const BurgerMenu = () => {
 
     return (
         <div className="relative">
-            {/* Icône du menu burger */}
             <button
                 onClick={toggleMenu}
                 className="flex flex-col justify-between w-8 h-6 focus:outline-none ml-5"
@@ -32,7 +31,6 @@ const BurgerMenu = () => {
                 ></span>
             </button>
 
-            {/* Menu déroulant */}
             {isOpen && (
                 <div className="absolute top-10 left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50">
                     <a
@@ -66,9 +64,9 @@ const Header = () => {
             <BurgerMenu />
 
             <nav className="flex w-96 p-2 justify-around shadow-2xs rounded-4xl">
-                <p>Jeu vidéo</p>
-                <p>Bande dessinée</p>
-                <p>À propos</p>
+                <a className="">Jeu vidéo</a>
+                <a>Bande dessinée</a>
+                <a>À propos</a>
             </nav>
 
             <div className="w-15"></div>

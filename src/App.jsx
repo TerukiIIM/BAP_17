@@ -1,7 +1,7 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
-import BurgerMenu from "./BurgerMenu";
+import BurgerMenu from "./components/BurgerMenu";
 import "./App.css";
 
 function App() {
@@ -10,21 +10,23 @@ function App() {
     return (
         <>
             <div className="w-[100%] h-screen">
-                <header className="fixed w-full flex justify-between pt-5">
+                <header className="fixed w-full flex justify-between z-50 pt-5">
                     <BurgerMenu />
 
                     <div className="w-15"></div>
                 </header>
-                <main className="h-11/12">
-                    <div className="flex h-[95%] flex-col justify-center items-center">
+                <main className="h-full">
+                    <section className="flex h-[100vh] flex-col justify-center items-center">
                         <img
                             src="../public/LOGO.png"
                             className="pb-[-20px]"
                             alt="logo de la maison ... "
                         />
                         <div className="flex  flex-col justify-center items-center">
-                            <h1 className=" w-3xl">Bienvenue</h1>
-                            <p className="  w-3xl text-center relative text-xl ">
+                            <h1 className="w-10/12 text-7xl md:text-[140px] md:w-3xl">
+                                Bienvenue
+                            </h1>
+                            <p className=" w-[398px] md:w-3xl text-center relative text-[12px] md:text-[16px] ">
                                 Embarque pour une aventure interactive où chaque
                                 défi te fait grandir ! Apprends en t’amusant sur
                                 l’éducation, le digital et la sécurité routière
@@ -32,9 +34,7 @@ function App() {
                                 palpitantes.
                             </p>
                             <svg
-                                className=" ml-[450px] absolute mt-70"
-                                width="460"
-                                height="245"
+                                className="ml-52 md:ml-[450px] w-56 md:w-[460px] absolute mt-32 md:mt-70"
                                 viewBox="0 0 460 245"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -45,148 +45,50 @@ function App() {
                                 />
                             </svg>
                         </div>
-                    </div>
-                    <div className="h-[95%] flex justify-center items-center">
+                    </section>
+                    <section className="h-[100vh] flex justify-center items-center">
                         <h2 className="">C'est Parti !</h2>
-                    </div>
-                    <div className="h-[95%] flex  flex-col items-center">
-                        <div className="w-3/6 flex  flex-col items-start absolute mt-10">
-                            <p className="font-bold text-4xl mt-10  pb-3">
-                                Owly
-                            </p>
-                            <p className=" text-2xl w-80 pb-2">
-                                Lorem ipsum dolor sit amet consectetur. Mattis
-                                vulputate purus nisi sem malesuada sit eget.
-                            </p>
-                            <p className="bg-black p-2 text-xl text-white w-30 text-center rounded-2xl">
-                                PLAY
-                            </p>
-                        </div>
-                        <div className="h-[95%] flex justify-center items-center relative">
-                            <img
-                                className="relative w-5xl"
-                                src="../public/fond.png"
-                                alt=""
-                            />
-                            <img
-                                className="absolute w-64"
-                                src="../public/play.png"
-                                alt=""
-                            />
-                        </div>
-                    </div>
-
-                    <div className="w-full flex flex-col">
-                        <div className="flex flex-row justify-center items-center mt-40 -mb-50">
-                            <div className="fles justify-center items-center">
-                                <img className=" h-60" src="/IMG2.png" alt="" />
-                                <div className="">
-                                    <p>Sécurité routière</p>
-                                    <div>
-                                        <svg
-                                            width="25"
-                                            height="25"
-                                            viewBox="0 0 25 25"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <ellipse
-                                                cx="12.375"
-                                                cy="12.3188"
-                                                rx="12.375"
-                                                ry="12.1"
-                                                fill="#141414"
-                                            />
-                                            <ellipse
-                                                cx="12.375"
-                                                cy="12.3188"
-                                                rx="12.375"
-                                                ry="12.1"
-                                                fill="white"
-                                            />
-                                            <path
-                                                d="M12.3755 15.9848L6.45703 9.87724L7.83801 8.45215L12.3755 13.1091L16.913 8.45215L18.294 9.87724L12.3755 15.9848Z"
-                                                fill="#1C1B1F"
-                                            />
-                                        </svg>
-                                        <p>En savoir plus</p>
-                                    </div>
-                                </div>
+                    </section>
+                    <section className="h-[100vh] flex  flex-col items-center">
+                        <div
+                            className="w-[530px] p-[40px] flex-col rounded-4xl"
+                            id="shadow"
+                        >
+                            <div className="w-3/6 flex  flex-col items-start mb-[40px]">
+                                <p className=" text-[32px]" id="boldFont">
+                                    Robin
+                                </p>
+                                <p className=" text-[16px] w-52">
+                                    Aide Robin à avoir une bonne hygiène de vie
+                                </p>
+                                <a className="bg-black text-[12px] text-white text-center px-3.5 py-0.5 rounded-[10px] mt-[16px]">
+                                    PLAY
+                                </a>
                             </div>
-                            <div>
+                            <div className="bg-[#1f2a330d] h-[341px] flex justify-center items-center p-[20px]">
                                 <img
-                                    className="m-5 h-80"
-                                    src="/IMG1.png"
+                                    className=" w-[311px] h-[247px]"
+                                    src="../public/play.png"
                                     alt=""
                                 />
                             </div>
-                            <div>
-                                <img className=" h-60" src="/IMG3.png" alt="" />
-                            </div>
                         </div>
-                        <div className="w-full flex flex-col items-center">
-                            <img
-                                className="w-[100%] absolute z-10 mt-96"
-                                src="/section 5.png"
-                                alt=""
-                            />
-                            <svg
-                                className="w-[100%] relative "
-                                width="100"
-                                viewBox="0 0 1512 1251"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M0 413L756.5 0L1512 413V1251H0V413Z"
-                                    fill="url(#paint0_linear_472_724)"
-                                />
-                                <defs>
-                                    <linearGradient
-                                        id="paint0_linear_472_724"
-                                        x1="756"
-                                        y1="48.0415"
-                                        x2="756"
-                                        y2="1251"
-                                        gradientUnits="userSpaceOnUse"
-                                    >
-                                        <stop
-                                            offset="0.065"
-                                            stop-color="white"
-                                            stop-opacity="0"
-                                        />
-                                        <stop
-                                            offset="0.285"
-                                            stop-color="#A9AA6E"
-                                        />
-                                        <stop
-                                            offset="0.56"
-                                            stop-color="#F0C385"
-                                        />
-                                        <stop
-                                            offset="1"
-                                            stop-color="#A9AA6E"
-                                            stop-opacity="0"
-                                        />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                        </div>
-                        <svg
-                            viewBox="0 0 1512 176"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <rect width="1512" height="176" fill="#2C141F" />
-                        </svg>
+                    </section>
 
-                        <div className="w-full flex flex-row items-center justify-center">
+                    <section className="h-[100vh] flex  flex-col justify-end">
+                        <img src="../public/ville.svg" alt="" />
+                        <div className="w-full h-40 bg-[#1F2A33]"></div>
+                    </section>
+
+                    <section className=" flex flex-col">
+                        {/* <div className="w-full h-[100vh] flex flex-col items-center justify-around">
+                            <div className="relative w-full h-40 bg-[#1F2A33]"></div>
                             <img
-                                className="absolute mb-72 z-20 w-5xl"
+                                className="absolute z-20 w-5xl"
                                 src="/livre.png"
                                 alt="Livre"
                             />
-                            <div className="w-full flex justify-between">
+                            <div className="w-full relative flex justify-between">
                                 <div className="ml-30 mt-30">
                                     <p className="font-bold text-4xl pb-3">
                                         TITRE
@@ -208,25 +110,25 @@ function App() {
                                     alt="Arbres"
                                 />
                             </div>
-                        </div>
+                        </div> */}
 
-                        <div className="w-full flex flex-row justify-around">
-                            <div className="relative px-8 w-4xl  -mt-30">
-                                <div className="mb-50">
-                                    <p className="font-bold text-5xl pb-2">
+                        <div className="w-full flex flex-col ">
+                            <div className="h-[100vh] w-full flex flex-col justify-center items-center md:items-start">
+                                <div className="md:ml-40 w-11/12 md:w-[584px]">
+                                    <p className="font-[500] text-[32px] mb-[16px]">
                                         Sécutité routière
                                     </p>
-                                    <p className="text-xl italic pb-7">
+                                    <p className="text-[16px] italic mb-[32px]">
                                         Lorem ipsum dolor sit amet consectetur.
                                         Semper id tortor dictumst ultrices porta
                                         amet.
                                     </p>
 
-                                    <div className="mb-7">
-                                        <p className="font-medium text-4xl pb-2">
+                                    <div className="mb-[32px]">
+                                        <p className="font-medium text-[20px] mb-[16px]">
                                             Titre
                                         </p>
-                                        <p className="text-2xl">
+                                        <p className="text-[16px]">
                                             Lorem ipsum dolor sit amet
                                             consectetur. Fames tempus enim at eu
                                             lorem gravida suscipit. Ut
@@ -246,124 +148,10 @@ function App() {
                                     </div>
 
                                     <div>
-                                        <p className="font-medium text-4xl pb-2">
+                                        <p className="font-medium text-[20px] mb-[16px]">
                                             Titre
                                         </p>
-                                        <p className="text-2xl ">
-                                            Lorem ipsum dolor sit amet
-                                            consectetur. Fames tempus enim at eu
-                                            lorem gravida suscipit. Ut
-                                            consectetur gravida sit tellus massa
-                                            mauris enim. Dolor consectetur urna
-                                            malesuada at vitae. Adipiscing
-                                            feugiat pulvinar sit placerat lacus
-                                            eget. Odio sed amet libero aliquet
-                                            magna sit vel. Mauris augue
-                                            ultricies nunc aliquam. Nunc in
-                                            gravida in elementum ultrices morbi.
-                                            Sagittis nunc id massa feugiat amet
-                                            mattis amet et fusce. Mi praesent
-                                            faucibus sem amet sit cursus aliquet
-                                            pulvinar tristique.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="mb-50">
-                                    <p className="font-bold text-5xl pb-2">
-                                        L'ère du digital
-                                    </p>
-                                    <p className="text-xl italic pb-7">
-                                        Lorem ipsum dolor sit amet consectetur.
-                                        Semper id tortor dictumst ultrices porta
-                                        amet.
-                                    </p>
-
-                                    <div className="mb-7">
-                                        <p className="font-medium text-4xl pb-2">
-                                            Titre
-                                        </p>
-                                        <p className="text-2xl">
-                                            Lorem ipsum dolor sit amet
-                                            consectetur. Fames tempus enim at eu
-                                            lorem gravida suscipit. Ut
-                                            consectetur gravida sit tellus massa
-                                            mauris enim. Dolor consectetur urna
-                                            malesuada at vitae. Adipiscing
-                                            feugiat pulvinar sit placerat lacus
-                                            eget. Odio sed amet libero aliquet
-                                            magna sit vel. Mauris augue
-                                            ultricies nunc aliquam. Nunc in
-                                            gravida in elementum ultrices morbi.
-                                            Sagittis nunc id massa feugiat amet
-                                            mattis amet et fusce. Mi praesent
-                                            faucibus sem amet sit cursus aliquet
-                                            pulvinar tristique.
-                                        </p>
-                                    </div>
-
-                                    <div>
-                                        <p className="font-medium text-4xl pb-2">
-                                            Titre
-                                        </p>
-                                        <p className="text-2xl">
-                                            Lorem ipsum dolor sit amet
-                                            consectetur. Fames tempus enim at eu
-                                            lorem gravida suscipit. Ut
-                                            consectetur gravida sit tellus massa
-                                            mauris enim. Dolor consectetur urna
-                                            malesuada at vitae. Adipiscing
-                                            feugiat pulvinar sit placerat lacus
-                                            eget. Odio sed amet libero aliquet
-                                            magna sit vel. Mauris augue
-                                            ultricies nunc aliquam. Nunc in
-                                            gravida in elementum ultrices morbi.
-                                            Sagittis nunc id massa feugiat amet
-                                            mattis amet et fusce. Mi praesent
-                                            faucibus sem amet sit cursus aliquet
-                                            pulvinar tristique.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="mb-50">
-                                    <p className="font-bold text-5xl pb-2">
-                                        Éducation
-                                    </p>
-                                    <p className="text-xl italic pb-7">
-                                        Lorem ipsum dolor sit amet consectetur.
-                                        Semper id tortor dictumst ultrices porta
-                                        amet.
-                                    </p>
-
-                                    <div className="mb-7">
-                                        <p className="font-medium text-4xl pb-2">
-                                            Titre
-                                        </p>
-                                        <p className="text-2xl ">
-                                            Lorem ipsum dolor sit amet
-                                            consectetur. Fames tempus enim at eu
-                                            lorem gravida suscipit. Ut
-                                            consectetur gravida sit tellus massa
-                                            mauris enim. Dolor consectetur urna
-                                            malesuada at vitae. Adipiscing
-                                            feugiat pulvinar sit placerat lacus
-                                            eget. Odio sed amet libero aliquet
-                                            magna sit vel. Mauris augue
-                                            ultricies nunc aliquam. Nunc in
-                                            gravida in elementum ultrices morbi.
-                                            Sagittis nunc id massa feugiat amet
-                                            mattis amet et fusce. Mi praesent
-                                            faucibus sem amet sit cursus aliquet
-                                            pulvinar tristique.
-                                        </p>
-                                    </div>
-
-                                    <div>
-                                        <p className="font-medium text-4xl pb-2">
-                                            Titre
-                                        </p>
-                                        <p className="text-2xl ">
+                                        <p className="text-[16px] ">
                                             Lorem ipsum dolor sit amet
                                             consectetur. Fames tempus enim at eu
                                             lorem gravida suscipit. Ut
@@ -384,7 +172,125 @@ function App() {
                                 </div>
                             </div>
 
-                            <div className="relative w-3xl  -mt-[810px]">
+                            {/* <div className="h-[100vh] w-full flex flex-col justify-center items-start">
+                                <div className="ml-40 w-[584px]">
+                                    <p className="font-[500] text-[32px] mb-[16px]">
+                                        Sécutité routière
+                                    </p>
+                                    <p className="text-[16px] italic mb-[32px]">
+                                        Lorem ipsum dolor sit amet consectetur.
+                                        Semper id tortor dictumst ultrices porta
+                                        amet.
+                                    </p>
+
+                                    <div className="mb-[32px]">
+                                        <p className="font-medium text-[20px] mb-[16px]">
+                                            Titre
+                                        </p>
+                                        <p className="text-[16px]">
+                                            Lorem ipsum dolor sit amet
+                                            consectetur. Fames tempus enim at eu
+                                            lorem gravida suscipit. Ut
+                                            consectetur gravida sit tellus massa
+                                            mauris enim. Dolor consectetur urna
+                                            malesuada at vitae. Adipiscing
+                                            feugiat pulvinar sit placerat lacus
+                                            eget. Odio sed amet libero aliquet
+                                            magna sit vel. Mauris augue
+                                            ultricies nunc aliquam. Nunc in
+                                            gravida in elementum ultrices morbi.
+                                            Sagittis nunc id massa feugiat amet
+                                            mattis amet et fusce. Mi praesent
+                                            faucibus sem amet sit cursus aliquet
+                                            pulvinar tristique.
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <p className="font-medium text-[20px] mb-[16px]">
+                                            Titre
+                                        </p>
+                                        <p className="text-[16px] ">
+                                            Lorem ipsum dolor sit amet
+                                            consectetur. Fames tempus enim at eu
+                                            lorem gravida suscipit. Ut
+                                            consectetur gravida sit tellus massa
+                                            mauris enim. Dolor consectetur urna
+                                            malesuada at vitae. Adipiscing
+                                            feugiat pulvinar sit placerat lacus
+                                            eget. Odio sed amet libero aliquet
+                                            magna sit vel. Mauris augue
+                                            ultricies nunc aliquam. Nunc in
+                                            gravida in elementum ultrices morbi.
+                                            Sagittis nunc id massa feugiat amet
+                                            mattis amet et fusce. Mi praesent
+                                            faucibus sem amet sit cursus aliquet
+                                            pulvinar tristique.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="h-[100vh] w-full flex flex-col justify-center items-start">
+                                <div className="ml-40 w-[584px]">
+                                    <p className="font-[500] text-[32px] mb-[16px]">
+                                        Sécutité routière
+                                    </p>
+                                    <p className="text-[16px] italic mb-[32px]">
+                                        Lorem ipsum dolor sit amet consectetur.
+                                        Semper id tortor dictumst ultrices porta
+                                        amet.
+                                    </p>
+
+                                    <div className="mb-[32px]">
+                                        <p className="font-medium text-[20px] mb-[16px]">
+                                            Titre
+                                        </p>
+                                        <p className="text-[16px]">
+                                            Lorem ipsum dolor sit amet
+                                            consectetur. Fames tempus enim at eu
+                                            lorem gravida suscipit. Ut
+                                            consectetur gravida sit tellus massa
+                                            mauris enim. Dolor consectetur urna
+                                            malesuada at vitae. Adipiscing
+                                            feugiat pulvinar sit placerat lacus
+                                            eget. Odio sed amet libero aliquet
+                                            magna sit vel. Mauris augue
+                                            ultricies nunc aliquam. Nunc in
+                                            gravida in elementum ultrices morbi.
+                                            Sagittis nunc id massa feugiat amet
+                                            mattis amet et fusce. Mi praesent
+                                            faucibus sem amet sit cursus aliquet
+                                            pulvinar tristique.
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <p className="font-medium text-[20px] mb-[16px]">
+                                            Titre
+                                        </p>
+                                        <p className="text-[16px] ">
+                                            Lorem ipsum dolor sit amet
+                                            consectetur. Fames tempus enim at eu
+                                            lorem gravida suscipit. Ut
+                                            consectetur gravida sit tellus massa
+                                            mauris enim. Dolor consectetur urna
+                                            malesuada at vitae. Adipiscing
+                                            feugiat pulvinar sit placerat lacus
+                                            eget. Odio sed amet libero aliquet
+                                            magna sit vel. Mauris augue
+                                            ultricies nunc aliquam. Nunc in
+                                            gravida in elementum ultrices morbi.
+                                            Sagittis nunc id massa feugiat amet
+                                            mattis amet et fusce. Mi praesent
+                                            faucibus sem amet sit cursus aliquet
+                                            pulvinar tristique.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> */}
+
+                            {/* <div className="relative w-3xl  ">
                                 <svg
                                     className=""
                                     viewBox="0 0 647 2809"
@@ -541,14 +447,9 @@ function App() {
                                         </filter>
                                     </defs>
                                 </svg>
-                            </div>
+                            </div> */}
                         </div>
-                    </div>
-                    <div className="w-full flex justify-center pb-15">
-                        <button className="w-14 h-14 bg-white rounded-full shadow-2xl">
-                            🔝
-                        </button>
-                    </div>
+                    </section>
                 </main>
                 <footer></footer>
             </div>
