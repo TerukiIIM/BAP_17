@@ -2,7 +2,8 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import BurgerMenu from "./components/BurgerMenu";
-import "./App.css";
+import Section2 from "./components/Section2";
+import "./index.css";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -10,7 +11,7 @@ function App() {
     return (
         <>
             <div className="w-[100%] h-screen">
-                <header className="fixed w-full flex justify-between z-50 pt-5">
+                <header className="fixed w-full flex justify-between z-50">
                     <BurgerMenu />
 
                     <div className="w-15"></div>
@@ -26,7 +27,7 @@ function App() {
                             <h1 className="w-10/12 text-7xl md:text-[140px] md:w-3xl">
                                 Bienvenue
                             </h1>
-                            <p className=" w-[398px] md:w-3xl text-center relative text-[12px] md:text-[16px] ">
+                            <p className=" w-[398px] md:w-3xl text-center relative text-[12px] md:text-[16px]">
                                 Embarque pour une aventure interactive où chaque
                                 défi te fait grandir ! Apprends en t’amusant sur
                                 l’éducation, le digital et la sécurité routière
@@ -34,7 +35,7 @@ function App() {
                                 palpitantes.
                             </p>
                             <svg
-                                className="ml-52 md:ml-[450px] w-56 md:w-[460px] absolute mt-32 md:mt-70"
+                                className="ml-52 md:ml-[450px] w-56 md:w-[460px] absolute mt-32 md:mt-60"
                                 viewBox="0 0 460 245"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -46,8 +47,14 @@ function App() {
                             </svg>
                         </div>
                     </section>
-                    <section className="h-[100vh] flex justify-center items-center">
-                        <h2 className="">C'est Parti !</h2>
+                    <section className="h-[100vh] flex justify-center items-center flex-col">
+                        <Section2 />
+                        {/* <h2 className="relative mb-96">C'est parti !</h2>
+                        <img
+                            src="../public/bus.svg"
+                            className="absolute"
+                            alt=""
+                        /> */}
                     </section>
                     <section className="h-[100vh] flex  flex-col items-center">
                         <div
