@@ -86,7 +86,7 @@ const Header = () => {
             <BurgerMenu />
 
             <nav
-                className="flex w-96 p-2 justify-around shadow-2xs rounded-4xl bg-[#ffffffba]"
+                className="flex w-96 p-2 justify-around shadow-2xs rounded-4xl backdrop-blur-xs bg-white/50"
                 id="shadow"
             >
                 <a className="text-black">Jeu vidéo</a>

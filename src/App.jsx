@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import BurgerMenu from "./components/BurgerMenu";
 import Section2 from "./components/Section2";
+import Section3 from "./components/Section3";
 import "./index.css";
 
 function App() {
@@ -49,12 +50,6 @@ function App() {
                     </section>
                     <section className="h-[100vh] flex justify-center items-center flex-col">
                         <Section2 />
-                        {/* <h2 className="relative mb-96">C'est parti !</h2>
-                        <img
-                            src="../public/bus.svg"
-                            className="absolute"
-                            alt=""
-                        /> */}
                     </section>
                     <section className="h-[100vh] flex  flex-col items-center">
                         <div
@@ -82,9 +77,14 @@ function App() {
                         </div>
                     </section>
 
-                    <section className="h-[100vh] flex  flex-col justify-end">
-                        <img src="../public/ville.svg" alt="" />
-                        <div className="w-full h-40 bg-[#1F2A33]"></div>
+                    <section className="h-[100vh] w-full flex  flex-col items-end">
+                        <Section3 />
+                        {/* <img
+                            src="../public/ville.svg"
+                            className="w-[9000px] overflow-hidden"
+                            alt=""
+                        />
+                        <div className="w-full h-40 bg-[#1F2A33]"></div> */}
                     </section>
 
                     <section className=" flex flex-col">
@@ -121,7 +121,7 @@ function App() {
 
                         <div className="w-full flex flex-col ">
                             <div className="h-[100vh] w-full flex flex-col justify-center items-center md:items-start">
-                                <div className="md:ml-40 w-11/12 md:w-[584px]">
+                                <div className="md:ml-40 w-full md:max-w-2xl p-10 bg-red-600 ">
                                     <p className="font-[500] text-[32px] mb-[16px]">
                                         Sécutité routière
                                     </p>
