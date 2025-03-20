@@ -35,6 +35,9 @@ p {
 #boldFont {
     font-weight: 500;
 }
+#boldFont2 {
+    font-weight: 700;
+}
 
 .bus2 {
     height: 360px;
