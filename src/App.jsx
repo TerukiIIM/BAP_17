@@ -2,7 +2,9 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import BurgerMenu from "./components/BurgerMenu";
-import "./App.css";
+import Section2 from "./components/Section2";
+import Section3 from "./components/Section3";
+import "./index.css";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -10,7 +12,7 @@ function App() {
     return (
         <>
             <div className="w-[100%] h-screen">
-                <header className="fixed w-full flex justify-between z-50 pt-5">
+                <header className="fixed w-full flex justify-between z-50">
                     <BurgerMenu />
 
                     <div className="w-15"></div>
@@ -26,7 +28,7 @@ function App() {
                             <h1 className="w-10/12 text-7xl md:text-[140px] md:w-3xl">
                                 Bienvenue
                             </h1>
-                            <p className=" w-[398px] md:w-3xl text-center relative text-[12px] md:text-[16px] ">
+                            <p className=" w-[398px] md:w-3xl text-center relative text-[12px] md:text-[16px]">
                                 Embarque pour une aventure interactive où chaque
                                 défi te fait grandir ! Apprends en t’amusant sur
                                 l’éducation, le digital et la sécurité routière
@@ -34,7 +36,7 @@ function App() {
                                 palpitantes.
                             </p>
                             <svg
-                                className="ml-52 md:ml-[450px] w-56 md:w-[460px] absolute mt-32 md:mt-70"
+                                className="ml-52 md:ml-[450px] w-56 md:w-[460px] absolute mt-32 md:mt-60"
                                 viewBox="0 0 460 245"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -46,8 +48,8 @@ function App() {
                             </svg>
                         </div>
                     </section>
-                    <section className="h-[100vh] flex justify-center items-center">
-                        <h2 className="">C'est Parti !</h2>
+                    <section className="h-[100vh] flex justify-center items-center flex-col">
+                        <Section2 />
                     </section>
                     <section className="h-[100vh] flex  flex-col items-center">
                         <div
@@ -75,9 +77,14 @@ function App() {
                         </div>
                     </section>
 
-                    <section className="h-[100vh] flex  flex-col justify-end">
-                        <img src="../public/ville.svg" alt="" />
-                        <div className="w-full h-40 bg-[#1F2A33]"></div>
+                    <section className="h-[100vh] w-full flex  flex-col items-end">
+                        <Section3 />
+                        {/* <img
+                            src="../public/ville.svg"
+                            className="w-[9000px] overflow-hidden"
+                            alt=""
+                        />
+                        <div className="w-full h-40 bg-[#1F2A33]"></div> */}
                     </section>
 
                     <section className=" flex flex-col">
@@ -114,7 +121,7 @@ function App() {
 
                         <div className="w-full flex flex-col ">
                             <div className="h-[100vh] w-full flex flex-col justify-center items-center md:items-start">
-                                <div className="md:ml-40 w-11/12 md:w-[584px]">
+                                <div className="md:ml-40 w-full md:max-w-2xl p-10 bg-red-600 ">
                                     <p className="font-[500] text-[32px] mb-[16px]">
                                         Sécutité routière
                                     </p>
