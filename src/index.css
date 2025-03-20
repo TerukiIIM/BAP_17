@@ -36,41 +36,41 @@ p {
     font-weight: 500;
 }
 
-@keyframes fadeInUp {
+.bus2 {
+    height: 360px;
+    width: auto;
+    transform: translateX(0);
+}
+
+.bus2-animate {
+    animation: bus2 3s ease-in-out forwards;
+}
+
+@keyframes bus2 {
     from {
-        opacity: 0;
-        transform: translate3d(0, 100%, 0);
+        transform: translateX(0);
     }
+
     to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
+        transform: translateX(33vw);
     }
 }
 
-@keyframes fadeInLeft {
+.bus {
+    height: 360px;
+    width: auto;
+    transform: translateX(0);
+}
+.bus-animate {
+    animation: bus 3s ease-in-out forwards;
+}
+
+@keyframes bus {
     from {
-        opacity: 0;
-        transform: translate3d(-100%, 0, 0);
+        transform: translateX(0);
     }
+
     to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
+        transform: translateX(33vw);
     }
-}
-
-.animated {
-    animation-duration: 1s;
-    animation-fill-mode: both;
-}
-
-.fadeInUp {
-    animation-name: fadeInUp;
-}
-
-.fadeInLeft {
-    animation-name: fadeInLeft;
-}
-
-.wow {
-    visibility: hidden;
 }

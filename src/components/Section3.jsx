@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "../index.css";
 
 const BusAnimation = () => {
-    const busRef = useRef(null);
+    const bus2Ref = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -17,28 +17,34 @@ const BusAnimation = () => {
             { threshold: 0.3 }
         );
 
-        const currentBus = busRef.current;
-        if (currentBus) {
-            observer.observe(currentBus);
+        const currentBus2 = bus2Ref.current;
+        if (currentBus2) {
+            observer.observe(currentBus2);
         }
 
         return () => {
-            if (currentBus) {
-                observer.unobserve(currentBus);
+            if (currentBus2) {
+                observer.unobserve(currentBus2);
             }
         };
     }, []);
 
     return (
-        <div className="relative h-screen w-full flex flex-col items-center justify-center">
-            <h2 className="h-screen text-[140px] mt-22 font-bold">
-                C'est parti !
-            </h2>
-
-            <div className="w-full absolute" ref={busRef}>
+        <div className="relative h-screen w-full flex flex-col items-center justify-end">
+            <div>
+                <p>Une histoire</p>
+                <p>Une aventure</p>
+            </div>
+            <img
+                src="../public/ville.svg"
+                className="w-[9000px] overflow-hidden"
+                alt=""
+            />
+            <div className="w-full h-40 bg-[#1F2A33]"></div>
+            <div className="w-full absolute mb-14" ref={bus2Ref}>
                 <img
                     src="/bus.svg"
-                    className={` bus ${isVisible ? "bus-animate" : ""}`}
+                    className={` bus2 ${isVisible ? "bus2-animate" : ""}`}
                     alt="Bus en mouvement"
                     loading="eager"
                 />
