@@ -35,3 +35,45 @@ p {
 #boldFont {
     font-weight: 500;
 }
+#boldFont2 {
+    font-weight: 700;
+}
+
+.bus2 {
+    height: 360px;
+    width: auto;
+    transform: translateX(0);
+}
+
+.bus2-animate {
+    animation: bus2 3s ease-in-out forwards;
+}
+
+@keyframes bus2 {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(33vw);
+    }
+}
+
+.bus {
+    height: 360px;
+    width: auto;
+    transform: translateX(0);
+}
+.bus-animate {
+    animation: bus 3s ease-in-out forwards;
+}
+
+@keyframes bus {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(33vw);
+    }
+}

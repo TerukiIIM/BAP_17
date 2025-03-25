@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../App.css";
 
 const BurgerMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +12,7 @@ const BurgerMenu = () => {
         <div className="relative">
             <button
                 onClick={toggleMenu}
-                className="flex flex-col justify-between w-8 h-6 focus:outline-none ml-5"
+                className="flex flex-col justify-between w-8 h-6 focus:outline-none ml-14 shad"
                 aria-label="Menu"
             >
                 <span
@@ -32,7 +33,10 @@ const BurgerMenu = () => {
             </button>
 
             {isOpen && (
-                <div className="absolute top-10 left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50">
+                <div
+                    className="absolute mt-5 ml-14  w-60 bg-white rounded-lg shadow-lg py-2 z-50"
+                    id="shadow"
+                >
                     <a
                         href="#"
                         className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
@@ -43,13 +47,31 @@ const BurgerMenu = () => {
                         href="#"
                         className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                     >
-                        Visite
+                        Découvrir la ville
                     </a>
                     <a
                         href="#"
                         className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                     >
-                        Services
+                        Vie municipale
+                    </a>
+                    <a
+                        href="#"
+                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                        Vivre au Plessis-Robinson
+                    </a>
+                    <a
+                        href="#"
+                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                        Vie culturelle
+                    </a>
+                    <a
+                        href="#"
+                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                        Section enfants
                     </a>
                 </div>
             )}
@@ -60,13 +82,16 @@ const BurgerMenu = () => {
 // Mise à jour du composant header
 const Header = () => {
     return (
-        <header className="fixed w-full flex justify-between pt-5">
+        <header className="fixed w-full flex justify-between pt-14">
             <BurgerMenu />
 
-            <nav className="flex w-96 p-2 justify-around shadow-2xs rounded-4xl">
-                <a className="">Jeu vidéo</a>
-                <a>Bande dessinée</a>
-                <a>À propos</a>
+            <nav
+                className="flex w-96 p-2 justify-around shadow-2xs rounded-4xl backdrop-blur-xs bg-white/50"
+                id="shadow"
+            >
+                <a className="text-black">Jeu vidéo</a>
+                <a className="text-black">Bande dessinée</a>
+                <a className="text-black">À propos</a>
             </nav>
 
             <div className="w-15"></div>
