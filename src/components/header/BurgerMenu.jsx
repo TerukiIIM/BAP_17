@@ -12,7 +12,7 @@ const BurgerMenu = () => {
         <div className="relative">
             <button
                 onClick={toggleMenu}
-                className="flex flex-col justify-between w-8 h-6 focus:outline-none ml-14 shad"
+                className="flex flex-col justify-between w-8 h-6 focus:outline-none mt-2 mx-8 md:ml-14 shad"
                 aria-label="Menu"
             >
                 <span
@@ -79,22 +79,27 @@ const BurgerMenu = () => {
     );
 };
 
-// Mise à jour du composant header
 const Header = () => {
     return (
-        <header className="fixed w-full flex justify-between pt-14">
+        <header className="fixed w-full flex justify-between pt-8 md:pt-14">
             <BurgerMenu />
 
             <nav
                 className="flex w-96 p-2 justify-around shadow-2xs rounded-4xl backdrop-blur-xs bg-white/50"
                 id="shadow"
             >
-                <a className="text-black">Jeu vidéo</a>
-                <a className="text-black">Bande dessinée</a>
-                <a className="text-black">À propos</a>
+                <a className="text-black" href="#1">
+                    Jeu vidéo
+                </a>
+                <a className="text-black" href="#2">
+                    Bande dessinée
+                </a>
+                <a className="text-black" href="#3">
+                    À propos
+                </a>
             </nav>
 
-            <div className="w-15"></div>
+            <div className="w-15 md:w-30"></div>
         </header>
     );
 };

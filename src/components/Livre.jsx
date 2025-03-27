@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const BookFlipper = () => {
     const pages = [
@@ -8,7 +8,7 @@ const BookFlipper = () => {
                 type: "default",
             },
             back: {
-                number: 2,
+                // number: 2,
                 type: "default",
             },
         },
@@ -28,73 +28,138 @@ const BookFlipper = () => {
                 type: "default",
             },
             back: {
-                number: 6,
+                // number: 6,
                 type: "default",
             },
         },
         {
             front: {
-                number: 7,
+                // number: 7,
                 type: "cover",
-                title: "My Book",
-                subtitle: "A wonderful story",
             },
             back: {
-                img: "/L.png",
+                img: "/L5.png",
                 id: "back-cover",
                 type: "back-cover",
             },
         },
     ];
 
-    const [currentPageIndex, setCurrentPageIndex] = useState(pages.length - 1);
-    const [zIndexes, setZIndexes] = useState(Array(pages.length).fill(1));
+    const [pageState, setPageState] = useState({
+        currentPage: 0,
+        flippedPages: new Array(pages.length).fill(false),
+        isClosing: false,
+    });
+
+    const zIndexLogic = (index, currentPage, totalPages) => {
+        if (index < currentPage) {
+            return index;
+        }
+        return totalPages - index;
+    };
+
+    useEffect(() => {
+        if (pageState.currentPage === pages.length && !pageState.isClosing) {
+            const timeout = setTimeout(() => {
+                setPageState((prev) => ({
+                    ...prev,
+                    isClosing: true,
+                }));
+
+                let currentPageInAnim = pages.length;
+                const interval = setInterval(() => {
+                    if (currentPageInAnim <= 0) {
+                        clearInterval(interval);
+                        setPageState({
+                            currentPage: 0,
+                            flippedPages: new Array(pages.length).fill(false),
+                            isClosing: false,
+                        });
+                        return;
+                    }
+
+                    setPageState((prev) => {
+                        const newFlipped = [...prev.flippedPages];
+                        newFlipped[currentPageInAnim - 1] = false;
+
+                        return {
+                            ...prev,
+                            currentPage: currentPageInAnim - 1,
+                            flippedPages: newFlipped,
+                        };
+                    });
+
+                    currentPageInAnim--;
+                }, 300);
+            }, 2000);
+
+            return () => {
+                clearTimeout(timeout);
+            };
+        }
+    }, [pageState.currentPage, pageState.isClosing, pages.length]);
 
     const turnRight = () => {
-        setCurrentPageIndex((prev) => {
-            const newIndex = prev > 0 ? prev - 1 : pages.length - 1;
-            const newZIndexes = [...zIndexes];
-            newZIndexes[newIndex] = Math.max(...newZIndexes) + 1;
-            setZIndexes(newZIndexes);
-            return newIndex;
+        if (pageState.isClosing) return;
+
+        setPageState((prevState) => {
+            if (prevState.currentPage >= pages.length) return prevState;
+
+            const newPage = prevState.currentPage + 1;
+            const newFlipped = [...prevState.flippedPages];
+
+            newFlipped[newPage - 1] = true;
+
+            return {
+                ...prevState,
+                currentPage: newPage,
+                flippedPages: newFlipped,
+            };
         });
     };
 
     const turnLeft = () => {
-        setCurrentPageIndex((prev) => {
-            const newIndex = prev < pages.length - 1 ? prev + 1 : 0;
-            const newZIndexes = [...zIndexes];
-            newZIndexes[newIndex] = Math.max(...newZIndexes) + 1;
-            setZIndexes(newZIndexes);
-            return newIndex;
+        if (pageState.isClosing) return;
+
+        setPageState((prevState) => {
+            if (prevState.currentPage <= 0) return prevState;
+
+            const newPage = prevState.currentPage - 1;
+            const newFlipped = [...prevState.flippedPages];
+
+            newFlipped[newPage] = false;
+
+            return {
+                ...prevState,
+                currentPage: newPage,
+                flippedPages: newFlipped,
+            };
         });
     };
 
-    const renderFigureContent = (pageContent) => {
-        if (pageContent.type === "cover") {
+    const renderPageContent = (page, side) => {
+        const content = page[side];
+
+        if (!content) return null;
+
+        if (content.img) {
+            return <img src={content.img} alt={`${side} page`} />;
+        }
+
+        if (content.number) {
+            return <p>{content.number}</p>;
+        }
+
+        if (side === "front" && content.type === "cover") {
             return (
-                <div>
-                    <h1>{pageContent.title}</h1>
-                    <p>{pageContent.subtitle}</p>
-                </div>
+                <>
+                    {content.title && <h1>{content.title}</h1>}
+                    {content.subtitle && <p>{content.subtitle}</p>}
+                </>
             );
         }
 
-        if (pageContent.img) {
-            return (
-                <div
-                    className="h-full w-full"
-                    style={{
-                        backgroundImage: `url(${pageContent.img})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        backgroundRepeat: "no-repeat",
-                    }}
-                />
-            );
-        }
-
-        return <p>{pageContent.number}</p>;
+        return null;
     };
 
     return (
@@ -104,29 +169,61 @@ const BookFlipper = () => {
                     <div
                         key={index}
                         className={`right ${
-                            index === currentPageIndex ? "flip" : ""
+                            pageState.flippedPages[index] ? "flip" : ""
                         }`}
-                        style={{ zIndex: zIndexes[index] || 1 }}
+                        style={{
+                            zIndex: zIndexLogic(
+                                index,
+                                pageState.currentPage,
+                                pages.length
+                            ),
+                        }}
                     >
-                        {page.back && (
-                            <figure className="back" id={page.back.id || ""}>
-                                {renderFigureContent(page.back)}
-                            </figure>
-                        )}
-                        {page.front && (
-                            <figure
-                                className="front"
-                                id={page.front.id || page.front.type || ""}
-                            >
-                                {renderFigureContent(page.front)}
-                            </figure>
-                        )}
+                        <figure
+                            className="back"
+                            id={index === pages.length ? "back-cover" : ""}
+                            style={{
+                                backgroundImage: page.back.img
+                                    ? `url(${page.back.img})`
+                                    : "none",
+                            }}
+                        >
+                            {renderPageContent(page, "back")}
+                        </figure>
+                        <figure
+                            className="front"
+                            id={index === 0 ? "cover" : ""}
+                            style={{
+                                backgroundImage: page.front.img
+                                    ? `url(${page.front.img})`
+                                    : "none",
+                            }}
+                        >
+                            {renderPageContent(page, "front")}
+                        </figure>
                     </div>
                 ))}
             </div>
-            <div>
-                <button onClick={turnLeft}>Prev</button>
-                <button onClick={turnRight}>Next</button>
+            <div className="controls">
+                <button
+                    className="bt"
+                    onClick={turnLeft}
+                    disabled={
+                        pageState.currentPage === 0 || pageState.isClosing
+                    }
+                >
+                    Prev
+                </button>
+                <button
+                    className="bt"
+                    onClick={turnRight}
+                    disabled={
+                        pageState.currentPage === pages.length ||
+                        pageState.isClosing
+                    }
+                >
+                    Next
+                </button>
             </div>
         </div>
     );

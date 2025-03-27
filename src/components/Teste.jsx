@@ -5,7 +5,7 @@ const ScrollRevealSvg = () => {
     const pathRef = useRef(null);
     const [pathLength, setPathLength] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
-    const [setProgress] = useState(0);
+    // const [progress, setProgress] = useState(0);
 
     useEffect(() => {
         const path = pathRef.current;
@@ -44,7 +44,7 @@ const ScrollRevealSvg = () => {
                 scrollProgress = 1;
             }
 
-            setProgress(scrollProgress);
+            // setProgress(scrollProgress);
 
             if (path && scrollProgress > 0) {
                 const drawLength = pathLength * (1 - scrollProgress);
@@ -62,14 +62,17 @@ const ScrollRevealSvg = () => {
     }, [pathLength, isVisible]);
 
     return (
-        <div ref={containerRef} className="relative w-full h-full min-h-screen">
+        <div
+            ref={containerRef}
+            className="relative w-0 h-0 md:w-full md:h-full min-h-screen"
+        >
             <svg
                 width="616"
                 height="3517"
                 viewBox="0 0 616 3517"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-[800px] pt-[330px] ml-[910px] z-20"
+                className="w-0 md:w-[800px] pt-[330px] ml-[910px] z-20"
             >
                 <g filter="url(#filter0_d_781_2573)">
                     <path

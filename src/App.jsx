@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "/vite.svg";
 import BurgerMenu from "./components/header/BurgerMenu";
@@ -10,7 +10,7 @@ import Teste from "./components/Teste";
 import "./index.css";
 
 function App() {
-    const [count, setCount] = useState(0);
+    // const [count, setCount] = useState(0);
 
     return (
         <>
@@ -21,25 +21,25 @@ function App() {
                 </header>
 
                 <main className="h-full">
-                    <section className="flex h-[100vh] flex-col justify-center items-center">
+                    <section className="flex h-[100vh] flex-col justify-center items-center ">
                         <img
                             src="../public/LOGO.png"
-                            className="pb-[-20px]"
+                            className="pb-[-20px] w-96 md:w-[800px]"
                             alt="logo de la maison ... "
                         />
-                        <div className="flex  flex-col justify-center items-center">
+                        <div className="flex  flex-col justify-center items-center overflow-hidden">
                             <h1 className="w-10/12 text-7xl md:text-[140px] md:w-3xl">
                                 Bienvenue
                             </h1>
-                            <p className=" w-[398px] md:w-3xl text-center relative text-[12px] md:text-[16px]">
+                            <p className="mt-2 md:mt-0 w-[360px] md:w-3xl text-center relative text-[10px] md:text-[16px]">
                                 Embarque pour une aventure interactive où chaque
-                                défi te fait grandir ! Apprends en t’amusant sur
+                                défi te fait grandir! Apprends en t’amusant sur
                                 l’éducation, le digital et la sécurité routière
                                 à travers des jeux captivants et des missions
                                 palpitantes.
                             </p>
                             <svg
-                                className="ml-52 md:ml-[450px] w-56 md:w-[460px] absolute mt-32 md:mt-60"
+                                className="ml-52 md:ml-[450px] w-48 md:w-[460px] absolute mt-28 md:mt-60 "
                                 viewBox="0 0 460 245"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -54,12 +54,15 @@ function App() {
                     <section className="h-[100vh] flex justify-center items-center flex-col">
                         <Section2 />
                     </section>
-                    <section className="h-[100vh] flex  flex-col items-center">
+                    <section
+                        className="h-[100vh] flex  flex-col items-center justify-center"
+                        id="1"
+                    >
                         <div
-                            className="w-[530px] p-[40px] flex-col rounded-4xl"
+                            className="md:w-[530px] m-5 p-[40px] flex-col rounded-4xl"
                             id="shadow"
                         >
-                            <div className="w-3/6 flex  flex-col items-start mb-[40px]">
+                            <div className=" w-3/6 flex  flex-col items-start mb-[40px]">
                                 <p className=" text-[32px]" id="boldFont">
                                     Robin
                                 </p>
@@ -70,9 +73,9 @@ function App() {
                                     PLAY
                                 </a>
                             </div>
-                            <div className="bg-[#1f2a330d] h-[341px] flex justify-center items-center p-[20px]">
+                            <div className="bg-[#1f2a330d] md:h-[341px] flex justify-center items-center p-[20px]">
                                 <img
-                                    className=" w-[311px] h-[247px]"
+                                    className=" md:w-[311px] md:h-[247px]"
                                     src="../public/play.png"
                                     alt=""
                                 />
@@ -80,9 +83,6 @@ function App() {
                         </div>
                     </section>
 
-                    <section className="h-[100vh] w-full flex items-center justify-center bg-amber-100">
-                        <Livre className="" />
-                    </section>
                     <section className="h-[100vh] w-full flex  flex-col items-end">
                         <Section3 />
                     </section>
@@ -91,34 +91,35 @@ function App() {
                         <div className="absolute">
                             <Teste />
                         </div>
-                        <div className="w-full h-[100vh] relative flex flex-col items-center justify-center">
+                        <div
+                            className="w-full h-[100vh] relative flex flex-col items-center justify-center"
+                            id="2"
+                        >
                             <div className="block h-full w-full">
-                                <div className="bg-[#1F2A33] h-40 flex justify-end items-center pe-16 text-white text-xl">
+                                <div className="bg-[#1F2A33] -mt-1 h-40 flex justify-end items-center pe-16 text-white text-xl">
                                     <p>
                                         Il faut lire Robin... <br /> je crois
                                         qu’il faut le toucher !
                                     </p>
                                 </div>
                             </div>
-                            <img
-                                className="absolute mt-14 z-20 w-3xl "
-                                src="/livre.png"
-                                alt="Livre"
-                            />
-                            <div className="w-full flex flex-row">
-                                <div className="w-1/2 flex flex-col pl-52 ">
+                            <div className="absolute">
+                                <Livre />
+                            </div>
+                            <div className="w-full flex justify-center  md:flex-row">
+                                <div className="md:w-1/2 flex md:mt-14 -mt-[1425px] md:justify-start  justify-center flex-col md:pl-52 mx-2">
                                     <p
-                                        className=" text-[32px] mt-20 pb-3 w-56"
+                                        className="text-[30px] md:text-[32px] mt-20 pb-3 md:w-56"
                                         id="boldFont"
                                     >
                                         Les aventures de Robin
                                     </p>
-                                    <p className="text-[20px] pb-2 w-56">
-                                        Apprenez les taches du quotidien avec
+                                    <p className="text-[20px] pb-2 md:w-56">
+                                        Apprenez les tâches du quotidien avec
                                         Robin !
                                     </p>
                                 </div>
-                                <div className="w-1/2 flex mr-[8%] -mt-24 pb-10 justify-center">
+                                <div className="w-0 md:w-1/2 flex mr-[8%] -mt-24 pb-10 justify-center">
                                     <img
                                         className=""
                                         src="../public/H1.png"
@@ -128,8 +129,11 @@ function App() {
                             </div>
                         </div>
 
-                        <div className=" flex w-full flex-row ">
-                            <div className="h-[100vh] w-1/2   flex flex-col justify-center items-center md:items-start">
+                        <div className=" flex w-full flex-row mb-14 md:mb-0">
+                            <div
+                                className="h-[100vh] md:w-1/2 w-full  flex flex-col justify-center items-center md:items-start"
+                                id="3"
+                            >
                                 <div className="md:ml-40 w-full md:max-w-2xl p-10">
                                     <p className=" text-[32px] mb-[16px]">
                                         Sécutité routière
@@ -187,7 +191,7 @@ function App() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="h-[100vh] w-1/2 flex flex-col justify-center items-center">
+                            <div className="h-0 w-0 md:h-[100vh] md:w-1/2 flex flex-col justify-center items-center">
                                 <img
                                     src="../public/A1.png"
                                     className=" z-30"
@@ -210,11 +214,11 @@ function App() {
                                 />
                             </div>
                         </div>
-                        <div className=" flex w-full flex-row ">
-                            <div className="h-[100vh] w-1/2   flex flex-col justify-center items-center md:items-start">
+                        <div className=" flex w-full flex-row mb-14 md:mb-0">
+                            <div className="h-[100vh] md:w-1/2 w-full   flex flex-col justify-center items-center md:items-start">
                                 <div className="md:ml-40 w-full md:max-w-2xl p-10">
                                     <p className="font-[500] text-[32px] mb-[16px]">
-                                        Sécutité routière
+                                        L’ère du digital
                                     </p>
                                     <p className="text-[16px] italic mb-[32px]">
                                         Lorem ipsum dolor sit amet consectetur.
@@ -269,7 +273,7 @@ function App() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="h-[100vh] w-1/2  flex flex-col justify-center items-center">
+                            <div className="h-0 w-0 md:h-[100vh] md:w-1/2  flex flex-col justify-center items-center">
                                 <img
                                     className=" z-30 ml-60"
                                     src="../public/B1.png"
@@ -298,10 +302,10 @@ function App() {
                             </div>
                         </div>
                         <div className=" flex w-full flex-row ">
-                            <div className="h-[100vh] w-1/2   flex flex-col justify-center items-center md:items-start">
+                            <div className="h-[100vh] md:w-1/2 w-full   flex flex-col justify-center items-center md:items-start">
                                 <div className="md:ml-40 w-full md:max-w-2xl p-10">
                                     <p className="font-[500] text-[32px] mb-[16px]">
-                                        Sécutité routière
+                                        L’éducation
                                     </p>
                                     <p className="text-[16px] italic mb-[32px]">
                                         Lorem ipsum dolor sit amet consectetur.
@@ -356,7 +360,7 @@ function App() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="h-[100vh] w-1/2  flex flex-col justify-center items-center">
+                            <div className="h-0 w-0 md:h-[100vh] md:w-1/2  flex flex-col justify-center items-center">
                                 <img
                                     className=" z-30 ml-72"
                                     src="../public/C1.png"
@@ -371,6 +375,7 @@ function App() {
                             </div>
                         </div>
                     </section>
+
                     <section className="text-white">
                         <Info />
                     </section>

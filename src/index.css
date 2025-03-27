@@ -16,7 +16,6 @@ h2 {
     font-family: "bryndan_write", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 11em;
     text-align: center;
 }
 p {
@@ -37,7 +36,7 @@ p {
 }
 
 .bus2 {
-    height: 360px;
+    height: 80px;
     width: auto;
     transform: translateX(0);
 }
@@ -50,15 +49,15 @@ p {
     }
 
     to {
-        transform: translateX(33vw);
+        transform: translateX(60vw);
     }
 }
-
 .bus {
-    height: 360px;
+    height: 80px;
     width: auto;
     transform: translateX(0);
 }
+
 .bus-animate {
     animation: bus 3s ease-in-out forwards;
 }
@@ -75,177 +74,62 @@ p {
 * {
     box-sizing: border-box;
 }
-/* 
+
 .book-section {
-    height: 100vh;
+    height: 282.75px;
     width: 100%;
-    padding: 40px 0;
+
     text-align: center;
 }
 .container {
-    height: 400px;
-    width: 500px;
+    height: 282.75px;
+    width: 400px;
+
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    border-radius: 2%;
     margin-bottom: 30px;
     perspective: 1200px;
 }
 .right {
     position: absolute;
-    height: 100%;
-    width: 60%;
-    transition: 0.7s ease-in-out;
-    transform-style: preserve-3d;
-    transform-origin: left;
-    border-radius: 10px 0 0 10px;
-}
-
-figure.front {
-    padding: 5px;
-    background-position: right;
-    border-radius: 0 10px 10px 0;
-    box-shadow: 2px 2px 15px -2px rgba(0, 0, 0, 0.2);
-    background-color: rgb(255, 255, 255);
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-size: 200%;
-    background-repeat: no-repeat;
-    backface-visibility: hidden;
-    overflow: hidden;
-}
-figure.back {
-    padding: 5px;
-    background-position: left;
-    border-radius: 10px 0 0 10px;
-    box-shadow: -2px 2px 15px -2px rgba(0, 0, 0, 0.2);
-    transform: rotateY(180deg);
-    background-color: rgb(255, 255, 255);
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-size: 200%;
-    background-repeat: no-repeat;
-    backface-visibility: hidden;
-    overflow: hidden;
-}
-.flip {
-    transform: rotateY(-180deg);
-}
-.flip::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    border-radius: 0 10px 10px 0;
-    background-color: rgba(0, 0, 0, 0.1);
-}
-button {
-    border: 2px solid #ef9f00;
-    background-color: transparent;
-    color: #ef9f00;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 10px;
-    transition: 0.3s ease-in-out;
-}
-button:focus,
-button:active {
-    outline: none;
-}
-button:hover {
-    background-color: #ef9f00;
-    color: #fff;
-}
-.front#cover,
-.back#back-cover {
-    background-color: #6bc8e9;
-    font-family: calibri;
-    text-align: left;
-    padding: 0 30px;
-}
-.front#cover h1 {
-    color: #fff;
-}
-.front#cover p {
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 14px;
-} */
-
-.book-section {
-    height: 100vh;
-    width: 100%;
-    padding: 40px 0;
-    text-align: center;
-}
-.container {
-    height: 400px;
-    width: 500px;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2%;
-    margin-bottom: 30px;
-    perspective: 1200px;
-}
-.right {
-    position: absolute;
-    height: 100%;
+    height: 282.75px;
     width: 50%;
+
     transition: 0.7s ease-in-out;
     transform-style: preserve-3d;
     right: 0;
     transform-origin: left;
-    border-radius: 10px 0 0 10px;
-    background-color: #c1d887;
+    border-radius: 2%;
 }
 
 figure.front {
     background-position: right;
     border-radius: 0 10px 10px 0;
     box-shadow: 2px 2px 15px -2px rgba(0, 0, 0, 0.2);
-    background-color: brown;
-    margin: 0;
-    height: 100%;
+    background-color: white;
+
+    height: 282.75px;
     width: 100%;
-    position: absolute;
+
     left: 0;
     top: 0;
-    background-size: 200%;
-    background-repeat: no-repeat;
-    backface-visibility: hidden;
-
-    overflow: hidden;
+    border-radius: 2%;
 }
 figure.back {
     background-position: left;
     border-radius: 10px 0 0 10px;
     box-shadow: -2px 2px 15px -2px rgba(0, 0, 0, 0.2);
     transform: rotateY(180deg);
-    background-color: red;
+    background-color: white;
     margin: 0;
-    height: 100%;
+    height: 282.75px;
     width: 100%;
     position: absolute;
     left: 0;
     top: 0;
-    background-size: 200%;
-    background-repeat: no-repeat;
     backface-visibility: hidden;
-
-    overflow: hidden;
+    border-radius: 2%;
 }
 
 .flip {
@@ -259,40 +143,54 @@ figure.back {
     z-index: 10;
     width: 100%;
     height: 100%;
-    border-radius: 0 10px 10px 0;
+    border-radius: 2%;
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-/* button {
-    border: 2px solid #ef9f00;
+.bt {
+    border: 2px solid #ffbb00;
     background-color: transparent;
-    color: #ef9f00;
+    color: #ffbb00;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     margin: 10px;
     transition: 0.3s ease-in-out;
 }
-button:focus,
-button:active {
+.bt:focus,
+.bt:active {
     outline: none;
 }
-button:hover {
-    background-color: #ef9f00;
+.bt:hover {
+    background-color: #ffbb00;
     color: #fff;
-} */
+}
 
-.front#cover,
-.back#back-cover {
-    background-color: #6bc8e9;
-    font-family: calibri;
-    text-align: left;
-    padding: 0 30px;
-}
-.front#cover h1 {
-    color: #fff;
-}
-.front#cover p {
-    color: rgba(0, 0, 0, 5);
-    font-size: 14px;
+@media screen and (min-width: 80rem) {
+    .bus2 {
+        height: 360px;
+    }
+    .bus {
+        height: 360px;
+    }
+    figure.back {
+        height: 353.44px;
+        width: 100%;
+    }
+    figure.front {
+        height: 353.44px;
+        width: 100%;
+    }
+    .right {
+        height: 353.44px;
+        width: 50%;
+    }
+    .container {
+        height: 353.44px;
+        width: 500px;
+    }
+    .book-section {
+        height: 353.44px;
+        width: 100%;
+    }
 }

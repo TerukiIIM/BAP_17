@@ -3,9 +3,13 @@ import "../../App.css";
 function Info() {
     return (
         <div>
-            <div className="bg-[#1F2A33] p-10 flex items-start justify-around">
-                <img className="mt-10" src="../public/H2.png" alt="" />
-                <div className="">
+            <div className="bg-[#1F2A33] mt-10 p-10 flex flex-col md:flex-row md:items-start justify-center md:justify-around">
+                <img
+                    className="md:mt-10 hidden md:flex  md:w-100%"
+                    src="../public/H2.png"
+                    alt=""
+                />
+                <div className="mb-10 md:mb-0">
                     <p className="text-xl" id="boldFont2">
                         Mairie du Plessis-Robinson
                     </p>
@@ -36,7 +40,7 @@ function Info() {
                         Contactez-nous
                     </p>
                 </div>
-                <div className="">
+                <div className="mb-10 md:mb-0">
                     <p className="text-xl" id="boldFont2">
                         Horaires
                     </p>
@@ -71,7 +75,7 @@ function Info() {
                         <p>de 8h30 à 12h et de 13h à 17h</p>
                     </div>
                 </div>
-                <div className="">
+                <div className="mb-10 md:mb-0">
                     <p className="text-xl" id="boldFont2">
                         Suivez-nous
                     </p>
@@ -172,16 +176,20 @@ function Info() {
                     </p>
                 </div>
             </div>
-            <div className="h-10 bg-black flex flex-row justify-center items-center text-xs">
-                <a href="">Mentions légales 32 16 20</a>
-                <hr className="border-none w-0.5 bg-white h-5 m-10" />
+            <div className="md:h-10 bg-black flex flex-col md:flex-row justify-center items-center text-xs">
+                <a className="mt-5 md:mt-0" href="">
+                    Mentions légales 32 16 20
+                </a>
+                <hr className="border-none w-5 md:w-0.5 bg-white h-0.5 md:h-5 m-5 md:m-10" />
                 <a href="">Modalités relatives aux cookies</a>
-                <hr className="border-none w-0.5 bg-white h-5 m-10" />
+                <hr className="border-none w-5 md:w-0.5 bg-white h-0.5 md:h-5 m-5 md:m-10" />
                 <a href="">Politique de confidentialité</a>
-                <hr className="border-none w-0.5 bg-white h-5 m-10" />
+                <hr className="border-none w-5 md:w-0.5 bg-white h-0.5 md:h-5 m-5 md:m-10" />
                 <a href="">Plan du site</a>
-                <hr className="border-none w-0.5 bg-white h-5 m-10" />
-                <a href="">Accessibilité</a>
+                <hr className="border-none w-5 md:w-0.5 bg-white h-0.5 md:h-5 m-5 md:m-10" />
+                <a className="mb-5 md:mb-0" href="">
+                    Accessibilité
+                </a>
             </div>
         </div>
     );
