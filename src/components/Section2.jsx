@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import "../index.css";
 
 const BusAnimation = () => {
     const busRef = useRef(null);
@@ -30,9 +29,9 @@ const BusAnimation = () => {
     }, []);
 
     return (
-        <div className="relative h-screen w-full flex flex-col items-center justify-center">
-            <h2 className="h-screen text-[140px] mt-22 font-bold">
-                C'est parti !
+        <div className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+            <h2 className="h-screen text-7xl md:text-[11em] mt-80 md:mt-22 font-bold">
+                C&apos;est parti !
             </h2>
 
             <div className="w-full absolute" ref={busRef}>
